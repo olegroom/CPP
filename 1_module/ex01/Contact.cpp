@@ -1,5 +1,6 @@
 #include "Contact.hpp"
 #include <string>
+#include <iostream>
 
 void Contact::set_first_name(std::string first_n)
 {
@@ -29,4 +30,24 @@ void Contact::set_nickname(std::string nick)
 std::string Contact::get_nickname()
 {
 	return (Contact::nick);
+}
+
+void Contact::set_number(std::string num)
+{
+	Contact::num = num;
+}
+
+std::string Contact::get_number()
+{
+	return (Contact::num);
+}
+
+void Contact::set_secret(std::string secret)
+{
+	Contact::secret = secret;
+}
+
+std::string Contact::get_secret()
+{
+	return (Contact::secret);
 }

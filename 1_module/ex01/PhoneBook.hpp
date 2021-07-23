@@ -1,8 +1,11 @@
+#pragma once
 #include "Contact.hpp"
 
 class PhoneBook
 {
-private:
-public:
-	Contact *conts;
+
+	public:
+		int arr_size;
+		int	get_arr_size(Contact *);
+		Contact *conts;
 };
