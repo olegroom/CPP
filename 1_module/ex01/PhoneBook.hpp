@@ -1,5 +1,5 @@
-#pragma once
-#include "Contact.hpp"
+#ifndef PHONE_BOOK_HPP
+#define PHONE_BOOK_HPP
 
 class PhoneBook
 {
@@ -9,3 +9,5 @@ class PhoneBook
 		int	get_arr_size(Contact *);
 		Contact *conts;
 };
+
+#endif
