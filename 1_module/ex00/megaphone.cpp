@@ -3,7 +3,7 @@
 
 int		main(int ac, char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	std::string str;
@@ -13,7 +13,7 @@ int		main(int ac, char **av)
 	else
 		while (++i < ac)
 			str += av[i];
-	for (i = 0; i < str.length(); ++i)
+	for (i = 0; i < (int)str.length(); ++i)
 		putchar(toupper(str[i]));
 	std::cout << std::endl;
 	return (0);

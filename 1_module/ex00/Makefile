@@ -1,7 +1,7 @@
 all: compile
 
 compile:
-	clang++ megaphone.cpp -o megaphone
+	clang++ -Wall -Wextra -Werror megaphone.cpp -o megaphone
 
 test1:
 	./megaphone "shhhhh... I think the students are asleep..."

@@ -2,6 +2,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <cstring>
+#include <string>
 #include <iomanip>
 #include <cctype>
 
@@ -94,16 +95,21 @@ int		make_table(PhoneBook *ph_book)
 
 int		show_contact_by_index(PhoneBook *ph_book)
 {
-	(void)ph_book;
-
-
-	if (i < 10 && i >= 0)
+	// (void)ph_book;
+	std::string str;
+	std::cout << "Enter the index[FROM 0 TO 8]\n";	
+	std::cin >> str;
+	if (str.size() > 1)
+		return (error_found("Wrong index input!\n"));
+	int i = str.at(0) - 48;
+	std::cout << i << std::endl;
+	if (i < 8 && i >= 0 && ph_book->arr_size > i)
 	{
-		std::cout << "First name: " << ph_book->conts[(int)i].get_first_name() << std::endl;
-		std::cout << "Last name: " << ph_book->conts[(int)i].get_last_name() << std::endl;
-		std::cout << "Nickname: " << ph_book->conts[(int)i].get_nickname() << std::endl;
-		std::cout << "Phone number: " << ph_book->conts[(int)i].get_number() << std::endl;
-		std::cout << "DARKEST SECRET: " << ph_book->conts[(int)i].get_secret() << std::endl;
+		std::cout << "First name: " << ph_book->conts[i].get_first_name() << std::endl;
+		std::cout << "Last name: " << ph_book->conts[i].get_last_name() << std::endl;
+		std::cout << "Nickname: " << ph_book->conts[i].get_nickname() << std::endl;
+		std::cout << "Phone number: " << ph_book->conts[i].get_number() << std::endl;
+		std::cout << "DARKEST SECRET: " << ph_book->conts[i].get_secret() << std::endl;
 	}
 	else
 		return (error_found("Wrong index\n"));
@@ -126,8 +132,7 @@ int		main(void)
 		else if (cmd.compare("SEARCH") == 0)
 		{
 			make_table(&ph_book);
-			if (show_contact_by_index(&ph_book) == 1)
-				return (1);
+			show_contact_by_index(&ph_book);
 		}
 		else if (cmd.compare("EXIT") == 0)
 			return (go_exit());
