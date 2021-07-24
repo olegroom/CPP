@@ -95,7 +95,6 @@ int		make_table(PhoneBook *ph_book)
 
 int		show_contact_by_index(PhoneBook *ph_book)
 {
-	// (void)ph_book;
 	std::string str;
 	std::cout << "Enter the index[FROM 0 TO 8]\n";	
 	std::cin >> str;
@@ -137,7 +136,7 @@ int		main(void)
 		else if (cmd.compare("EXIT") == 0)
 			return (go_exit());
 		else
-			return (error_found("error: bad input"));
+			continue ;
 	}
 	return (0);
 }
