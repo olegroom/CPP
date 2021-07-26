@@ -1,6 +1,8 @@
 NAME = proga
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp
+
+FILENAMES = filename.replace
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -13,6 +15,7 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(FILENAMES)
 
 fclean: clean
 	rm -f $(NAME)

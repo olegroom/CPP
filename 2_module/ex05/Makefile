@@ -1,6 +1,6 @@
 NAME = proga
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Karen.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
