@@ -7,42 +7,24 @@ int		error_found(std::string str) {
 	return (1);
 }
 
-std::string	replace_in_line(std::string cur_line, std::string search, std::string replace){
-	std::string new_line;
-	std::string cur_word;
-	int i = 0;
-	int j;
-	while (cur_line[i] != '\0')
-	{
-		while (cur_line[i] == ' ')
-		{
-			new_line += " ";
-			i++;
-		}
-		j = 0;
-		while (cur_line[i] != ' ' && cur_line[i] != '\0')
-		{
-			i++;
-			j++;
-		}
-		cur_word = cur_line.substr(i - j, j);
-		if (cur_word.compare(search) == 0)
-			new_line += replace;
-		else
-			new_line += cur_word;
-	}
-	return (new_line);
+std::string	replace_in_line(std::string cur_line, std::string search, std::string replace) {
+	int index;
+
+	while ((index = cur_line.find(search)) != -1)
+		cur_line.replace(index, search.size(), replace);
+	return (cur_line);
 }
 
 int		main(int ac, char **av) {
 	if (ac != 4)
 		return (error_found("Wrong number of args"));
+	if (!av[1] || !av[2])
+		return (error_found("Put s1 and s2 not as empty strings"));
 
 	std::string s1 = av[1];
 	std::string s2 = av[2];
 	std::string file = av[3];
 	std::string cur_line;
-
 
 	std::ifstream ifs(file);
 	if (ifs.is_open() == false)
@@ -57,8 +39,9 @@ int		main(int ac, char **av) {
 		if (ifs.eof() == false)
 			ofs << '\n';
 	}
-	ifs.close();
-	ofs.close();
-
+	if (ifs.is_open() == true)
+		ifs.close();
+	if (ofs.is_open() == true)
+		ofs.close();
 	return (0);
 }
