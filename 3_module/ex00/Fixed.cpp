@@ -11,10 +11,10 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-
-void Fixed::operator = (const Fixed &f2) {
+Fixed& Fixed::operator = (const Fixed &f2) {
 	std::cout << "Assignation operator called" << std::endl;
 	this->fixed_p_value = f2.getRawBits();
+	return (*this);
 }
 
 Fixed::Fixed(const Fixed &f2) {
