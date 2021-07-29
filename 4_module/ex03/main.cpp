@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int		main(void) {
 	ClapTrap kostya("Kostya");
@@ -23,5 +24,11 @@ int		main(void) {
 
 	sc1.attack("Me");
 	sc2.highFivesGuys();
+
+	DiamondTrap d1("OLEG");
+
+	d1.whoAmI();
+	
+
 	return (0);
 }

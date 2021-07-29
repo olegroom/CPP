@@ -32,7 +32,7 @@ ScavTrap::~ScavTrap() {
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << "ScavTrap has entered in Gate keeper mode" << std::endl;
+	std::cout << this->name << " has entered in Gate keeper mode" << std::endl;
 }
 
 void	ScavTrap::attack(std::string const &target) {
