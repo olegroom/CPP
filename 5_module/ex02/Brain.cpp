@@ -1,7 +1,6 @@
 #include "Brain.hpp"
 
 Brain::Brain() {
-	ideas[0] = "first idea is a great idea";
 	std::cout << "Brain constructor called" << std::endl;
 }
 

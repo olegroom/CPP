@@ -13,6 +13,9 @@ Dog::~Dog() {
 
 Dog &Dog::operator=(const Dog & obj2) {
 	this->type = obj2.type;
+	delete this->ptr_to_brain;
+	ptr_to_brain = new Brain();
+	*ptr_to_brain = *obj2.ptr_to_brain;
 	return(*this);
 }
 

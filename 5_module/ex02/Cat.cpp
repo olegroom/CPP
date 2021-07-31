@@ -2,8 +2,8 @@
 
 Cat::Cat() {
 	this->type = "Cat";
-	this->ptr_to_brain = new Brain();
 	std::cout << "Cat Constructor called" << std::endl;
+	this->ptr_to_brain = new Brain();
 }
 
 Cat::~Cat() {
@@ -13,6 +13,9 @@ Cat::~Cat() {
 
 Cat &Cat::operator=(const Cat & obj2) {
 	this->type = obj2.type;
+	delete this->ptr_to_brain;
+	ptr_to_brain = new Brain();
+	*ptr_to_brain = *obj2.ptr_to_brain;
 	return(*this);
 }
 
