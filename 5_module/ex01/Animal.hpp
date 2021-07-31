@@ -1,6 +1,7 @@
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
+#include "Brain.hpp"
 #include <string>
 #include <iostream>
 
@@ -9,7 +10,7 @@ class Animal {
 		Animal();
 		Animal(const Animal &);
 		Animal &operator=(const Animal &);
-		~Animal();
+		virtual ~Animal();
 		virtual void	make_sound() const;
 		virtual std::string	getType() const;
 

@@ -5,12 +5,15 @@
 class Dog : public Animal {
 	public:
 		Dog();
-		~Dog();
+		virtual ~Dog();
 		Dog(const Dog &);
 		Dog& operator=(const Dog &);
 
 		void		make_sound() const;
 		std::string	getType() const;
+
+	private:
+		Brain *ptr_to_brain;
 };
 
 #endif
