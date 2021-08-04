@@ -115,14 +115,19 @@ int		show_contact_by_index(PhoneBook *ph_book)
 	return (0);
 }
 
+void	funct_ea() {
+	Contact myperson("MyNickPerson");
+	return ;
+}
+
 int		main(void)
 {
 	std::string cmd;
 	PhoneBook ph_book;
 	ph_book.arr_size = 0;
 
-	ph_book.conts = new Contact[8];
-
+	const int size = 8;
+	ph_book.conts = new Contact[size];
 	while (1)
 	{
 		std::cin >> cmd;

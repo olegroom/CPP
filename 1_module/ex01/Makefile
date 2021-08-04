@@ -3,7 +3,7 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS		= -Wall -Wextra  -Wno-unused -Werror -I.
 
 NAME			= phone_book
 

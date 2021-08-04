@@ -1,7 +1,7 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <string>
-
+#include <iostream>
 class Contact
 {
 	public:
@@ -16,8 +16,21 @@ class Contact
 		void set_secret(std::string);
 		std::string get_secret();
 		void add_person();
+		Contact() {
+			first_name = "default";
+			std::cout << "I'M CREATED using default constructor" << std::endl;
+		}
+		Contact(std::string name) {
+			first_name = name;
+			std::cout << name << std::endl;
+		}
+
+		~Contact() {
+			std::cout << first_name << " is deleted" << std::endl;
+		}
 
 	private:
+		int age;
 		std::string first_name;
 		std::string last_name;
 		std::string nick;
